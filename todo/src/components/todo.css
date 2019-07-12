@@ -1,0 +1,22 @@
+.form-container {
+  margin-top: 40px;
+  text-align: center;
+}
+.form-input {
+  padding: 15px 60px;
+  font-size: 19px;
+  border-radius: 5px;
+  color: #d8d8d8;
+  font-family: "Indie Flower", cursive;
+  font-weight: bold;
+}
+.form-btn {
+  padding: 15px 40px;
+  font-size: 19px;
+  background-color: #fdd041;
+  margin-left: 15px;
+  border-radius: 5px;
+  font-family: "Indie Flower", cursive;
+  font-weight: bolder;
+  cursor: pointer;
+}
