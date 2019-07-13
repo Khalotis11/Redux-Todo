@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "./todo.css";
 
+import { connect } from "react-redux";
+import { addTodos } from "../actions";
+
 class TodoForm extends Component {
   constructor() {
     super();
@@ -10,6 +13,13 @@ class TodoForm extends Component {
   }
   handleChange = evt => {
     this.setState({ [evt.target.name]: evt.target.value });
+  };
+  handleClick = evt => {
+    evt.preventDefault();
+    this.setState({
+      todo: this.props.addTodos(this.state.textInput)
+    });
+    this.setState({ textInput: "" });
   };
   render() {
     return (
@@ -22,9 +32,24 @@ class TodoForm extends Component {
           onChange={this.handleChange}
           className="form-input"
         />
-        <button className="form-btn">Add To List</button>
+        <button onClick={this.handleClick} className="form-btn">
+          Add To List
+        </button>
+        <div>
+          {this.props.todo.map((todos, index) => (
+            <h2 key={index}>{todos.task}</h2>
+          ))}
+        </div>
       </div>
     );
   }
 }
-export default TodoForm;
+const mapStateToProps = state => {
+  return {
+    todo: state.todo
+  };
+};
+export default connect(
+  mapStateToProps,
+  { addTodos }
+)(TodoForm);
