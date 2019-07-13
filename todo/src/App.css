@@ -1,0 +1,14 @@
+.App {
+  width: 900px;
+  margin: 0 auto;
+  font-family: "Indie Flower", cursive;
+}
+body {
+  background-color: #98bfe8;
+}
+.title {
+  color: white;
+  text-align: center;
+  font-size: 50px;
+  margin-top: 50px;
+}
